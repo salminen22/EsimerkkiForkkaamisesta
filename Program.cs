@@ -18,19 +18,22 @@ namespace tehtävä2
             string vastaus = Console.ReadLine();
             // Kysytään käyttäjältä raporttityyppi
 
-            //Kommentti jotta saadaan aikaa muutos
+            //Jos vastaus ei ole l tai s käyttäjää pyydetään vastaamaan uudestaan
             while(vastaus.ToLower() != "l" && vastaus.ToLower() != "s")
             { 
                 Console.WriteLine($"{vastaus} raporttityyppiä ei ole.");
                 Console.WriteLine("Valitse raporttityyppi(\"L\" tai \"S\"):");
                 vastaus = Console.ReadLine();
             }
+            //Käyttäjältä pyydetään lisäämään luku listaan tai keskeyttämään ohjelma
             Console.WriteLine("Syötä kokonaisluku lisättäväksi listaan tai \"K\" keskeytä");
+            //Ohjelma tallentaa käyttäjän luvun ja lisää sen listaan
             string luku = Console.ReadLine();
             int iluku;
             int summa = 0;
             List<int> lista = new List<int>();
-            
+
+            //Jos käyttäjä vastasi luvulla se lisätään listaan
             while (luku.ToLower() != "k")
             {
                 if (int.TryParse(luku, out iluku))
